@@ -1,0 +1,19 @@
+public class solution {
+
+    public static void linearsearch(int arr[],int n,int i){
+        if(n==arr.length){
+            System.out.println("Element not found");
+            return;
+        }
+        if(arr[n]==i){
+            System.out.println("element found at index:"+n);
+            return;
+        }
+        linearsearch(arr,n+1,i);
+
+    }
+    public static void main(String[] args){
+        int arr[]={1,2,3,5,15,16,18};
+        linearsearch(arr,0,18);
+    }
+}
