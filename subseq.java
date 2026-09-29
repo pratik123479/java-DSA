@@ -1,24 +1,16 @@
-public class Solution {
+public class substring {
 
-    public static void subsequences(String str, int index, String newString) {
-
-        // Base case
-        if (index == str.length()) {
-            System.out.println(newString);
+    public static void subseq(String name,String newname) {
+        if(name.length()==0){
+            System.out.println(newname);
             return;
         }
+        char x=name.charAt(0);
+        subseq(name.substring(1),newname+x);
+        subseq(name.substring(1),newname);
 
-        // Take the current character
-        subsequences(str, index + 1, newString + str.charAt(index));
-
-        // Don't take the current character
-        subsequences(str, index + 1, newString);
     }
-
     public static void main(String[] args) {
-
-        String str = "abc";
-
-        subsequences(str, 0, "");
+        subseq("abc","");
     }
 }
